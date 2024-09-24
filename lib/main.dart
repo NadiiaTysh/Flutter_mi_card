@@ -9,17 +9,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const CircleAvatar(
+              CircleAvatar(
                 radius: 50.0,
                 backgroundImage: AssetImage('images/cat.jpg'),
               ),
-              const Text(
+              Text(
                 'Moon Night',
                 style: TextStyle(
                   fontSize: 40,
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'Pacifico',
                 ),
               ),
-              const Text(
+              Text(
                 'FLUTTER DEVELOPER',
                 style: TextStyle(
                     color: Colors.tealAccent,
@@ -36,50 +37,43 @@ class MyApp extends StatelessWidget {
                     fontSize: 20,
                     letterSpacing: 2.5),
               ),
-              Container(
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                padding: EdgeInsets.all(10),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.phone,
-                      color: Colors.teal,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      '123-456-7890',
-                      style: TextStyle(
-                        color: Colors.teal,
-                        fontSize: 20,
-                      ),
-                    )
-                  ],
+              SizedBox(
+                height: 20,
+                width: 150,
+                child: Divider(
+                  color: Colors.white,
                 ),
               ),
-              Container(
-                color: Colors.white,
+              Card(
                 margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                padding: EdgeInsets.all(10),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.email,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    '123-456-7890',
+                    style: TextStyle(
                       color: Colors.teal,
+                      fontSize: 20,
                     ),
-                    SizedBox(
-                      width: 10,
+                  ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'moon@gmail.com',
+                    style: TextStyle(
+                      color: Colors.teal,
+                      fontSize: 20,
                     ),
-                    Text(
-                      'moon@gmail.com',
-                      style: TextStyle(
-                        color: Colors.teal,
-                        fontSize: 20,
-                      ),
-                    )
-                  ],
+                  ),
                 ),
               ),
             ],
